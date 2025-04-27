@@ -41,3 +41,9 @@ let am_in_browser =
   | `Browser | `Browser_test | `Browser_benchmark -> true
   | `Node | `Node_benchmark | `Node_test | `Node_jsdom_test -> false
 ;;
+
+let am_in_browser_like_api =
+  match am_running_how with
+  | `Browser | `Browser_test | `Browser_benchmark | `Node_jsdom_test -> true
+  | `Node | `Node_benchmark | `Node_test -> false
+;;
